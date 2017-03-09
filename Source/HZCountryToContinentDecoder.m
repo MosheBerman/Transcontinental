@@ -12,7 +12,8 @@
 #pragma mark Constants
 
 NSString * const kContinentNameAfrica   = @"Africa";
-NSString * const kContinentNameAmerica  = @"America";
+NSString * const kContinentNameNorthAmerica  = @"North America";
+NSString * const kContinentNameSouthAmerica  = @"South America";
 NSString * const kContinentNameAsia   = @"Asia";
 NSString * const kContinentNameAustralia  = @"Australia";
 NSString * const kContinentNameEurope   = @"Europe";
@@ -44,12 +45,13 @@ NSString * const kContinentNameEurope   = @"Europe";
                                              @"NG", @"RE", @"RW", @"SC", @"SD", @"SH", @"SL", @"SN", @"SO",
                                              @"ST", @"SZ", @"TD", @"TG", @"TN", @"TZ", @"UG", @"YT", @"ZA",
                                              @"ZM", @"ZW" ];
-    NSArray *const countriesInAmerica   = @[ @"AG", @"AI", @"AN", @"AR", @"AW", @"BB", @"BL", @"BM", @"BO",
-                                             @"BR", @"BS", @"BZ", @"CA", @"CL", @"CO", @"CR", @"CU", @"DM",
+    NSArray *const countriesInNorthAmerica = @[ @"CA", @"US" ];
+    NSArray *const countriesInSouthAmerica  = @[ @"AG", @"AI", @"AN", @"AR", @"AW", @"BB", @"BL", @"BM", @"BO",
+                                             @"BR", @"BS", @"BZ", @"CL", @"CO", @"CR", @"CU", @"DM",
                                              @"DO", @"EC", @"FK", @"GD", @"GF", @"GL", @"GP", @"GT", @"GY",
                                              @"HN", @"HT", @"JM", @"KN", @"KY", @"LC", @"MF", @"MQ", @"MS",
                                              @"MX", @"NI", @"PA", @"PE", @"PM", @"PR", @"PY", @"SR", @"SV",
-                                             @"TC", @"TT", @"US", @"UY", @"VC", @"VE", @"VG", @"VI" ];
+                                             @"TC", @"TT", @"UY", @"VC", @"VE", @"VG", @"VI" ];
     NSArray *const countriesInAsia      = @[ @"AE", @"AF", @"AM", @"AP", @"AZ", @"BD", @"BH", @"BN", @"BT",
                                              @"CC", @"CN", @"CX", @"CY", @"GE", @"HK", @"ID", @"IL", @"IN",
                                              @"IO", @"IQ", @"IR", @"JO", @"JP", @"KG", @"KH", @"KP", @"KR",
@@ -68,8 +70,10 @@ NSString * const kContinentNameEurope   = @"Europe";
   
     NSArray *objectsForAfrica      = [NSArray arrayContainingObject:kContinentNameAfrica
                                                       numberOfTimes:[countriesInAfrica count]];
-    NSArray *objectsForAmerica     = [NSArray arrayContainingObject:kContinentNameAmerica
-                                                      numberOfTimes:[countriesInAmerica count]];
+    NSArray *objectsForNorthAmerica     = [NSArray arrayContainingObject:kContinentNameNorthAmerica
+                                                      numberOfTimes:[countriesInNorthAmerica count]];
+    NSArray *objectsForSouthAmerica     = [NSArray arrayContainingObject:kContinentNameSouthAmerica
+                                                           numberOfTimes:[countriesInSouthAmerica count]];
     NSArray *objectsForAsia        = [NSArray arrayContainingObject:kContinentNameAsia
                                                       numberOfTimes:[countriesInAsia count]];
     NSArray *objectsForAustralia   = [NSArray arrayContainingObject:kContinentNameAustralia
@@ -79,8 +83,10 @@ NSString * const kContinentNameEurope   = @"Europe";
     
     NSDictionary *dictionaryForAfrica       = [NSDictionary dictionaryWithObjects:objectsForAfrica
                                                                           forKeys:countriesInAfrica];
-    NSDictionary *dictionaryForAmerica      = [NSDictionary dictionaryWithObjects:objectsForAmerica
-                                                                          forKeys:countriesInAmerica];
+    NSDictionary *dictionaryForNorthAmerica      = [NSDictionary dictionaryWithObjects:objectsForNorthAmerica
+                                                                          forKeys:countriesInNorthAmerica];
+    NSDictionary *dictionaryForSouthAmerica      = [NSDictionary dictionaryWithObjects:objectsForSouthAmerica
+                                                                               forKeys:countriesInSouthAmerica];
     NSDictionary *dictionaryForAsia         = [NSDictionary dictionaryWithObjects:objectsForAsia
                                                                           forKeys:countriesInAsia];
     NSDictionary *dictionaryForAustralia    = [NSDictionary dictionaryWithObjects:objectsForAustralia
@@ -90,7 +96,8 @@ NSString * const kContinentNameEurope   = @"Europe";
     
     NSDictionary *countryCodeToContinentMap = [NSMutableDictionary dictionary];
     [countryCodeToContinentMap setValuesForKeysWithDictionary:dictionaryForAfrica];
-    [countryCodeToContinentMap setValuesForKeysWithDictionary:dictionaryForAmerica];
+    [countryCodeToContinentMap setValuesForKeysWithDictionary:dictionaryForNorthAmerica];
+    [countryCodeToContinentMap setValuesForKeysWithDictionary:dictionaryForSouthAmerica];
     [countryCodeToContinentMap setValuesForKeysWithDictionary:dictionaryForAsia];
     [countryCodeToContinentMap setValuesForKeysWithDictionary:dictionaryForAustralia];
     [countryCodeToContinentMap setValuesForKeysWithDictionary:dictionaryForEurope];
@@ -110,7 +117,7 @@ NSString * const kContinentNameEurope   = @"Europe";
     
     if (!result)
     {
-        result = @[kContinentNameAfrica, kContinentNameAmerica, kContinentNameAsia,
+        result = @[kContinentNameAfrica, kContinentNameNorthAmerica, kContinentNameSouthAmerica, kContinentNameAsia,
                    kContinentNameAustralia, kContinentNameEurope];
     }
     
